@@ -4,4 +4,4 @@ tags={
 	"Events"
 }
 name="Lost Spawn"
-supported_version="2.8.0"
+supported_version="2.8.*"

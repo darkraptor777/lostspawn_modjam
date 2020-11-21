@@ -1,0 +1,158 @@
+#################################
+### Lost Spawn Origin Events  ###
+### by Anna Howard			  ###
+#################################
+
+namespace = lostspawn
+
+
+###Lost Spawn Origin Setup###
+country_event = {
+	id = lostspawn.111
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = origin_lostspawn
+    }
+
+	immediate = {
+		capital_scope = {
+			create_archaeological_site = lostspawn_home_system_site
+		}
+	}
+}
+
+###God Spawning###
+fleet_event = {
+	id = lostspawn.002
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		
+		create_country = {
+			name = "Mechanica" #couldn't get it to read localisation properly for some reason
+			type = lostspawn_mechanical
+			flag = {
+				icon = {
+					category = "legion"
+					file = "flag_mp_beta_05.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors={
+					"black"
+					"black"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				set_faction_hostility = { set_hostile = no }
+				every_playable_country = {
+					establish_communications_no_message = prev
+				}
+			}
+		}
+		last_created_country = {
+			create_fleet = {
+				name= "Mechanica" #couldn't get it to read localisation properly for some reason
+				effect = {
+					create_ship = {
+						name = "Mechanica" #couldn't get it to read localisation properly for some reason
+						design = NAME_lostspawn_mechanical_god
+					}
+					set_owner = PREV
+					set_location = {
+						target = root
+						distance = 10
+						angle = random
+					}
+					set_fleet_stance = passive
+					#set_aggro_range_measure_from = self
+					#set_aggro_range = 500
+				}
+			}
+		}
+		
+	}
+}
+
+###Lost Spawn Home System Digsite###
+# Stage 1 - Beyond Impact
+fleet_event = {
+	id = lostspawn.101
+	title = "lostspawn.101.name"
+	desc = "lostspawn.101.desc"
+	picture = GFX_evt_landing_ship
+	show_sound = event_ghost_town
+	
+	archaeology = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = DIG
+		small_artifact_reward = yes
+	}
+}
+# Stage 2 - Beyond Impact
+fleet_event = {
+	id = lostspawn.102
+	title = "lostspawn.101.name"
+	desc = "lostspawn.101.desc"
+	picture = GFX_evt_landing_ship
+	show_sound = event_ghost_town
+	
+	archaeology = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = DIG
+		small_artifact_reward = yes
+	}
+}# Stage 3 - Beyond Impact
+fleet_event = {
+	id = lostspawn.103
+	title = "lostspawn.101.name"
+	desc = "lostspawn.101.desc"
+	picture = GFX_evt_landing_ship
+	show_sound = event_ghost_town
+	
+	archaeology = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = { 
+		from = { set_site_progress_locked = no } 
+	}
+	
+	option = {
+		name = DIG
+		small_artifact_reward = yes
+	}
+}
+
