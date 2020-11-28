@@ -1,10 +1,55 @@
 ﻿l_english:
+ lostspawn_chain_title:0 "In Search of Answers"
+ lostspawn_chain_desc:0 "If we want to know more about our creation, we will have to track down that which is responsible."
+
+ lostspawn_begining_poi:0 "temp"
+ lostspawn_begining_desc:0 "temp"
  lostspawn_home_system_site:0 "temp"
  lostspawn_home_system_site_intro:0 "temp"
+ 
+ lostspawn.2.name:0 "temp"
+ lostspawn.2.desc:0 "temp"
+ lostspawn.2.a:0 "temp"
  
  lostspawn.101.name:0 "temp"
  lostspawn.101.desc:0 "temp"
  lostspawn.102.name:0 "temp"
  lostspawn.102.desc:0 "temp"
- lostspawn.103.name:0 "temp"
- lostspawn.104.desc:0 "temp"
+ lostspawn.102.a:0 "temp"
+ 
+ lostspawn_extinct_civ_poi:0 "temp"
+ lostspawn_extinct_civ_desc:0 "temp"
+ lostspawn_extinct_civ_site:0 "temp"
+ lostspawn_extinct_civ_site_intro:0 "temp"
+ 
+ lostspawn.111.name:0 "temp"
+ lostspawn.111.desc:0 "temp"
+ lostspawn.112.name:0 "temp"
+ lostspawn.112.desc:0 "temp"
+ lostspawn.113.name:0 "temp"
+ lostspawn.113.desc:0 "temp"
+ lostspawn.113.a:0 "temp"
+ 
+ lostspawn_failed_shaping_poi:0 "temp"
+ lostspawn_failed_shaping_desc:0 "temp"
+ lostspawn_failed_shaping_site:0 "temp"
+ lostspawn_failed_shaping_site_intro:0 "temp"
+ 
+ lostspawn.121.name:0 "temp"
+ lostspawn.121.desc:0 "temp"
+ lostspawn.122.name:0 "temp"
+ lostspawn.122.desc:0 "temp"
+ lostspawn.123.name:0 "temp"
+ lostspawn.123.desc:0 "temp"
+ lostspawn.124.name:0 "temp"
+ lostspawn.124.desc:0 "temp"
+ lostspawn.124.a:0 "temp"
+ 
+ lostspawn.1001.name:0 "Mechanica"
+ lostspawn.1001.desc:0 "Greetings,§H DESIGNATION:§M CHILD§W. Submit query."
+ lostspawn.1001.a:0 "Are you... ?"
+ 
+ lostspawn.1002.name:0 "Mechanica"
+ lostspawn.1002.desc:0 "§H DESIGNATION:§M PARENT§W. Correct. We are responsible for [Root.owner_species.GetSpeciesName]"
+ lostspawn.1002.a:0 "Are you... ?"
+ 

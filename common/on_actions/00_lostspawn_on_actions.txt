@@ -1,5 +1,12 @@
+#setup
 on_game_start_country = {
 	events = {
-		lostspawn.111
+		lostspawn.1
+	}
+}
+#killing a god
+on_fleet_destroyed_perp = {
+	events = {
+		lostspawn.201
 	}
 }
