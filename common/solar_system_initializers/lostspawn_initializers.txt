@@ -15,7 +15,64 @@ lost_spawn_lev_system_1 = {
 	flags = { lostspawn_guardian lostspawn_guardian_1 guardian }
 
 	init_effect = {
-		lostspawn.3
+		create_country = {
+			name = "Mechanica" #couldn't get it to read localisation properly for some reason
+			type = lostspawn_mechanical
+			flag = {
+				icon = {
+					category = "legion"
+					file = "flag_mp_beta_05.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors={
+					"black"
+					"black"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				set_faction_hostility = { 
+					set_hostile = no
+					set_neutral = yes
+					set_friendly = no 
+				}
+				save_global_event_target_as = mechanical_god_country
+				set_country_flag = mechanical_god_country
+				every_playable_country = {
+					establish_communications_no_message = prev
+				}
+			}
+		}
+		last_created_country = {
+			create_fleet = {
+				name= "Mechanica" #couldn't get it to read localisation properly for some reason
+				effect = {
+					create_ship = {
+						name = "Mechanica" #couldn't get it to read localisation properly for some reason
+						design = NAME_lostspawn_mechanical_god
+						effect = {
+							set_ship_flag = mechanical_god_ship
+							save_global_event_target_as = mechanical_god_ship
+							set_disabled = no
+						}
+					}
+					save_global_event_target_as = mechanical_god_fleet
+					set_owner = PREV
+					set_location = {
+						target = root
+						distance = 10
+						angle = random
+					}
+					set_fleet_stance = passive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 500
+				}
+			}
+		}
 	}
 	
 	max_instances = 1
@@ -122,7 +179,64 @@ lost_spawn_lev_system_2 = {
 	flags = { lostspawn_guardian lostspawn_guardian_2 guardian }
 
 	init_effect = {
-		lostspawn.4
+		create_country = {
+			name = "Veteris" #couldn't get it to read localisation properly for some reason
+			type = lostspawn_old
+			flag = {
+				icon = {
+					category = "zoological"
+					file = "flag_zoological_23.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors={
+					"black"
+					"black"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				set_faction_hostility = { 
+					set_hostile = no
+					set_neutral = yes
+					set_friendly = no  
+				}
+				save_global_event_target_as = old_god_country
+				set_country_flag = old_god_country
+				every_playable_country = {
+					establish_communications_no_message = prev
+				}
+			}
+		}
+		last_created_country = {
+			create_fleet = {
+				name= "Veteris" #couldn't get it to read localisation properly for some reason
+				effect = {
+					create_ship = {
+						name = "Veteris" #couldn't get it to read localisation properly for some reason
+						design = NAME_lostspawn_old_god
+						effect = {
+							set_ship_flag = old_god_ship
+							save_global_event_target_as = old_god_ship
+							set_disabled = no
+						}
+					}
+					save_global_event_target_as = old_god_fleet
+					set_owner = PREV
+					set_location = {
+						target = root
+						distance = 10
+						angle = random
+					}
+					set_fleet_stance = passive
+					#set_aggro_range_measure_from = self
+					#set_aggro_range = 500
+				}
+			}
+		}
 	}
 	
 	max_instances = 1

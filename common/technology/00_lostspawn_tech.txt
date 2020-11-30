@@ -1,17 +1,11 @@
 #######################################
-######### STRATEGIC RESOURCES #########
+######### 		TECH		 ##########
 #######################################
 
-
-
-#################
-# Non-clustered #
-#################
-
 lostspawn_tech_tech_priest = {
-	cost = @tier1cost1
+	cost = @tier1cost2
 	area = society
-	tier = 1
+	tier = 2
 	category = { statecraft }
 	weight = 0
 

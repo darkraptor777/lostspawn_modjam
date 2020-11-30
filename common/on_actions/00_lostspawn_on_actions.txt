@@ -8,5 +8,9 @@ on_game_start_country = {
 on_fleet_destroyed_perp = {
 	events = {
 		lostspawn.201
+		lostspawn.202
+		lostspawn.211
+		lostspawn.212
+		lsotspawn.213
 	}
 }
