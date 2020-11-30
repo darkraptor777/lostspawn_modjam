@@ -81,9 +81,9 @@
  lostspawn.201.a:0 "placeholder"
  
  ###Killed Mech God By Other###
- lostspawn.201.name:0 "Deicide"
- lostspawn.201.desc:0 "Someone else killed Mechanica"
- lostspawn.201.a:0 "placeholder"
+ lostspawn.202.name:0 "Deicide"
+ lostspawn.202.desc:0 "Someone else killed Mechanica"
+ lostspawn.202.a:0 "placeholder"
  
  ###Old God Killed###
  lostspawn.211.name:0 "Deicide"

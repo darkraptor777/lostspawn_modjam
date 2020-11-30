@@ -71,9 +71,7 @@ country_event = {
 		}
 		From = {
 			any_fleet_in_system = {
-				limit = {
-					owner = { has_country_flag = mechanical_god_country } #if mech god(s fleet) is in the system
-				}
+				owner = { has_country_flag = mechanical_god_country } #if mech god(s fleet) is in the system
 			}
 		}
 	}
