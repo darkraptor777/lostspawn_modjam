@@ -6,4 +6,16 @@ spriteTypes = {
 		alwaystransparent = yes
 	}
 	
+	spriteType = {
+		name = "GFX_event_lostspawn_mechanica"
+		texturefile = "gfx/event_pictures/lostspawn_Mechanica.dds"
+		alwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_event_lostspawn_veteris"
+		texturefile = "gfx/event_pictures/lostspawn_Veteris.dds"
+		alwaystransparent = yes
+	}
+	
 }
