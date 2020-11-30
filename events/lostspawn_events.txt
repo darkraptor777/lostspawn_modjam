@@ -65,6 +65,19 @@ country_event = {
 	diplomatic = yes
 	is_triggered_only = yes
 	
+	trigger = {
+		FromFrom = {
+			has_country_flag = lostspawn_god_mechanical #if country enterinf system has mech god origin
+		}
+		From = {
+			any_fleet_in_system = {
+				limit = {
+					owner = { has_country_flag = mechanical_god_country } #if mech god(s fleet) is in the system
+				}
+			}
+		}
+	}
+	
 	
 	#Specifies picture for diplomatic event. Most options are optional here
 	picture_event_data = {
