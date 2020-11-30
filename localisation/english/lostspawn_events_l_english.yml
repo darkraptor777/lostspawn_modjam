@@ -50,12 +50,16 @@
  lostspawn.124.a:0 "placeholder"
  
  ###Mech God Diplomacy###
+ lostspawn.1000.name:0 "Communication"
+ lostspawn.1000.desc:0 "We are recieving communications from something in the [Root.Solar_System.GetName] system."
+ lostspawn.1000.a:0 "Open Comms Channels"
+ 
  lostspawn.1001.name:0 "Mechanica"
  lostspawn.1001.desc:0 "Greetings,§H DESIGNATION:§M CHILD§W. Submit query."
  lostspawn.1001.a:0 "Are you... ?"
  
  lostspawn.1002.name:0 "Mechanica"
- lostspawn.1002.desc:0 "§H DESIGNATION:§M PARENT§W. Correct. We are responsible for [Root.owner_species.GetSpeciesName]"
+ lostspawn.1002.desc:0 "§H DESIGNATION:§M PARENT§W. Correct. We are responsible for [Root.GetSpeciesName]."
  lostspawn.1002.a:0 "You really created us?"
  lostspawn.1002.b:0 "What are you?"
  lostspawn.1002.c:0 "placeholder"
@@ -63,6 +67,10 @@
  lostspawn.1002.e:0 "Pretender, no machine could have created us."
  
  ###Old God Diplomacy###
+ lostspawn.1010.name:0 "Communication"
+ lostspawn.1010.desc:0 "We are recieving communications from something in the [Root.Solar_System.GetName] system."
+ lostspawn.1010.a:0 "Open Comms Channels"
+ 
  lostspawn.1011.name:0 "Veteris"
  lostspawn.1011.desc:0 "Who disturbs my slumber?"
  lostspawn.1011.a:0 "Are you... ?"

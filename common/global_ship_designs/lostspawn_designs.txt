@@ -126,35 +126,75 @@ ship_design = {
 			slot = "AUX_UTILITY_3"
 			template = "SHIELD_BOOSTER"
 		}
+		component = {
+			slot = "AUX_UTILITY_4"
+			template = "REACTOR_BOOSTER_3"
+		}
+		component = {
+			slot = "AUX_UTILITY_5"
+			template = "ENIGMATIC_DECODER"
+		}
+		
+		
 	}
 	
 	section = {
 		template = "lostspawn_mechanical_god_small_bot_1_key"
 		slot = "bot_1"
+
+		component = {
+			slot = "POINTDEFENCE_01"
+			template = "POINT_DEFENCE_3"
+		}
 		
 		component = {
-			slot = "TORPEDO_01"
-			template = "SCAVENGER_SECONDARY_WEAPON"
+			slot = "POINTDEFENCE_02"
+			template = "POINT_DEFENCE_3"
+		}
+		
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "FIRE_CONTROL_1"
 		}
 	}
 	
 	section = {
 		template = "lostspawn_mechanical_god_small_bot_2_key"
 		slot = "bot_2"
+
+		component = {
+			slot = "POINTDEFENCE_01"
+			template = "POINT_DEFENCE_3"
+		}
 		
 		component = {
-			slot = "TORPEDO_01"
-			template = "SCAVENGER_SECONDARY_WEAPON"
+			slot = "POINTDEFENCE_02"
+			template = "POINT_DEFENCE_3"
+		}
+		
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "FIRE_CONTROL_1"
 		}
 	}
 	
 	section = {
 		template = "lostspawn_mechanical_god_small_bot_3_key"
 		slot = "bot_3"
+
+		component = {
+			slot = "POINTDEFENCE_01"
+			template = "POINT_DEFENCE_3"
+		}
 		
 		component = {
-			slot = "TORPEDO_01"
-			template = "SCAVENGER_SECONDARY_WEAPON"
+			slot = "POINTDEFENCE_02"
+			template = "POINT_DEFENCE_3"
+		}
+		
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "FIRE_CONTROL_1"
 		}
 	}
 	required_component = "HYPER_DRIVE_2"

@@ -57,24 +57,224 @@ country_event = {
 	}
 }
 
-###Mech God Diplomacy#################################################################################################
-country_event = {
-	id = lostspawn.1001
-	title = lostspawn.1001.name
-	desc = lostspawn.1001.desc
-	diplomatic = yes
+###God Spawning#######################################################################################################
+ship_event = {
+	id = lostspawn.3
+	hide_window = yes
 	is_triggered_only = yes
 	
 	trigger = {
-		FromFrom = {
-			has_country_flag = lostspawn_god_mechanical #if country enterinf system has mech god origin
+		owner = {
+			has_country_flag = lostspawn_god_mechanical #if country entering system has mech god origin
 		}
-		From = {
+		FROM = {
+			has_star_flag = lostspawn_guardian_1
+		}
+	}
+	
+	
+	immediate = {
+		if = {
+			limit = {
+				solar_system = {
+					NOT = { has_star_flag = lostspawn_mech_spawned }
+				}
+			}
+			solar_system = { 
+				set_star_flag = lostspawn_mech_spawned
+				random_system_planet = { 
+					create_country = {
+						name = "Mechanica" #couldn't get it to read localisation properly for some reason
+						type = lostspawn_mechanical
+						flag = {
+							icon = {
+								category = "legion"
+								file = "flag_mp_beta_05.dds"
+							}
+							background= {
+								category = "backgrounds"
+								file = "00_solid.dds"
+							}
+							colors={
+								"black"
+								"black"
+								"null"
+								"null"
+							}
+						}
+						effect = {
+							set_faction_hostility = { 
+								set_hostile = no
+								set_neutral = yes
+								set_friendly = no 
+							}
+							save_global_event_target_as = mechanical_god_country
+							set_country_flag = mechanical_god_country
+							every_playable_country = {
+								establish_communications_no_message = prev
+							}
+						}
+					}
+					last_created_country = {
+						create_fleet = {
+							name= "Mechanica" #couldn't get it to read localisation properly for some reason
+							effect = {
+								create_ship = {
+									name = "Mechanica" #couldn't get it to read localisation properly for some reason
+									design = NAME_lostspawn_mechanical_god
+									effect = {
+										set_ship_flag = mechanical_god_ship
+										save_global_event_target_as = mechanical_god_ship
+										set_disabled = no
+									}
+								}
+								save_global_event_target_as = mechanical_god_fleet
+								set_owner = PREV
+								
+								set_location = {
+									target = PREVPREV
+									distance = 10
+									angle = random
+								}
+								set_fleet_stance = passive
+								set_aggro_range_measure_from = self
+								set_aggro_range = 500
+							}
+						}
+					}
+
+				} 
+			}
+		
+		}
+	}
+	
+}
+
+ship_event = {
+	id = lostspawn.4
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			has_country_flag = lostspawn_god_old #if country entering system has mech god origin
+		}
+		FROM = {
+			has_star_flag = lostspawn_guardian_2
+		}
+	}
+	
+	
+	immediate = {
+		if = {
+			limit = {
+				solar_system = {
+					NOT = { has_star_flag = lostspawn_mech_spawned }
+				}
+			}
+			solar_system = { 
+				set_star_flag = lostspawn_mech_spawned
+				random_system_planet = { 
+					create_country = {
+						name = "Veteris" #couldn't get it to read localisation properly for some reason
+						type = lostspawn_old
+						flag = {
+							icon = {
+								category = "zoological"
+								file = "flag_zoological_23.dds"
+							}
+							background= {
+								category = "backgrounds"
+								file = "00_solid.dds"
+							}
+							colors={
+								"black"
+								"black"
+								"null"
+								"null"
+							}
+						}
+						effect = {
+							set_faction_hostility = { 
+								set_hostile = no
+								set_neutral = yes
+								set_friendly = no  
+							}
+							save_global_event_target_as = old_god_country
+							set_country_flag = old_god_country
+							every_playable_country = {
+								establish_communications_no_message = prev
+							}
+						}
+					}
+					last_created_country = {
+						create_fleet = {
+							name= "Veteris" #couldn't get it to read localisation properly for some reason
+							effect = {
+								create_ship = {
+									name = "Veteris" #couldn't get it to read localisation properly for some reason
+									design = NAME_lostspawn_old_god
+									effect = {
+										set_ship_flag = old_god_ship
+										save_global_event_target_as = old_god_ship
+										set_disabled = no
+									}
+								}
+								save_global_event_target_as = old_god_fleet
+								set_owner = PREV
+								set_location = {
+									target = PREVPREV
+									distance = 10
+									angle = random
+								}
+								set_fleet_stance = passive
+								#set_aggro_range_measure_from = self
+								#set_aggro_range = 500
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+
+###Mech God Diplomacy#################################################################################################
+ship_event = {
+	id = lostspawn.1000
+	title = lostspawn.1000.name
+	desc = lostspawn.1000.desc
+	picture = GFX_evt_star_chart
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			has_country_flag = lostspawn_god_mechanical #if country entering system has mech god origin
+		}
+		FROM = {
 			any_fleet_in_system = {
 				owner = { has_country_flag = mechanical_god_country } #if mech god(s fleet) is in the system
 			}
 		}
 	}
+	
+	
+	option = {
+		name = lostspawn.1000.a
+		hidden_effect = {
+			ship_event = { id = lostspawn.1001 } 
+		}
+	}
+}
+ship_event = {
+	id = lostspawn.1001
+	title = lostspawn.1001.name
+	desc = lostspawn.1001.desc
+	diplomatic = yes
+	is_triggered_only = yes
 	
 	
 	#Specifies picture for diplomatic event. Most options are optional here
@@ -87,7 +287,7 @@ country_event = {
 	option = {
 		name = lostspawn.1001.a
 		hidden_effect = {
-			country_event = { id = lostspawn.1002 }
+			owner = { country_event = { id = lostspawn.1002 } }
 		}
 	}
 }
@@ -125,6 +325,15 @@ country_event = {
 	
 	option = { #accept
 		name = lostspawn.1002.d
+	
+		event_target:mechanical_god_country = {
+			set_faction_hostility = {
+				target = root
+				set_hostile = no
+				set_neutral = no
+				set_friendly = yes
+			}
+		}
 		hidden_effect = {
 			country_event = { id = lostspawn.301 }
 		}
@@ -132,18 +341,7 @@ country_event = {
 	
 	option = { #reject
 		name = lostspawn.1002.e
-		hidden_effect = {
-			#country_event = { id = leviathans.1056 }
-		}
-	}
-}
-
-country_event = { #mech god becomes hostile
-	id = lostspawn.1003
-	hide_window = yes
-	is_triggered_only = yes
-	
-	immediate = {
+		
 		event_target:mechanical_god_country = {
 			set_faction_hostility = {
 				target = root
@@ -159,24 +357,53 @@ country_event = { #mech god becomes hostile
 	}
 }
 
+country_event = { #mech god becomes hostile
+	id = lostspawn.1003
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		
+	}
+}
+
 country_event = { #mech god becomes friendly
 	id = lostspawn.1004
 	hide_window = yes
 	is_triggered_only = yes
 	
 	immediate = {
-		event_target:mechanical_god_country = {
-			set_faction_hostility = {
-				target = root
-				set_hostile = no
-				set_neutral = no
-				set_friendly = yes
-			}
-		}
+		
 	}
 }
 ###Old God Diplomacy##################################################################################################
-country_event = {
+ship_event = {
+	id = lostspawn.1010
+	title = lostspawn.1010.name
+	desc = lostspawn.1010.desc
+	picture = GFX_evt_star_chart
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			has_country_flag = lostspawn_god_old #if country entering system has mech god origin
+		}
+		FROM = {
+			any_fleet_in_system = {
+				owner = { has_country_flag = old_god_country } #if mech god(s fleet) is in the system
+			}
+		}
+	}
+	
+	
+	option = {
+		name = lostspawn.1010.a
+		hidden_effect = {
+			ship_event = { id = lostspawn.1011 } 
+		}
+	}
+}
+ship_event = {
 	id = lostspawn.1011
 	title = lostspawn.1011.name
 	desc = lostspawn.1011.desc
@@ -194,7 +421,7 @@ country_event = {
 	option = {
 		name = lostspawn.1011.a
 		hidden_effect = {
-			country_event = { id = lostspawn.1012 }
+			owner = { country_event = { id = lostspawn.1012 } }
 		}
 	}
 }
@@ -232,25 +459,21 @@ country_event = {
 	
 	option = { #accept
 		name = lostspawn.1012.d
+		event_target:old_god_country = {
+			set_faction_hostility = {
+				target = root
+				set_hostile = no
+				set_neutral = no
+				set_friendly = yes
+			}
+		}
 		hidden_effect = {
-			country_event = { id = lostspawn.1014 }
+			country_event = { id = lostspawn.311 }
 		}
 	}
 	
 	option = { #reject
 		name = lostspawn.1012.e
-		hidden_effect = {
-			country_event = { id = lostspawn.1013 }
-		}
-	}
-}
-
-country_event = { #old god becomes hostile
-	id = lostspawn.1013
-	hide_window = yes
-	is_triggered_only = yes
-	
-	immediate = {
 		event_target:old_god_country = {
 			set_faction_hostility = {
 				target = root
@@ -265,22 +488,7 @@ country_event = { #old god becomes hostile
 	}
 }
 
-country_event = { #old god becomes friendly
-	id = lostspawn.1014
-	hide_window = yes
-	is_triggered_only = yes
-	
-	immediate = {
-		event_target:old_god_country = {
-			set_faction_hostility = {
-				target = root
-				set_hostile = no
-				set_neutral = no
-				set_friendly = yes
-			}
-		}
-	}
-}
+
 
 
 ###God Killing#################################################################################################
@@ -469,7 +677,7 @@ country_event = {
 
 	is_triggered_only = yes
 
-	immediate = { country_event = { id = lostspawn.1004 } }
+	#immediate = { country_event = { id = lostspawn.1004 } }
 
 	option = {
 		name = lostspawn.301.a
@@ -505,7 +713,7 @@ country_event = {
 
 	is_triggered_only = yes
 
-	immediate = { country_event = { id =lostspawn.1014 } }
+	#immediate = { country_event = { id =lostspawn.1014 } }
 
 	option = {
 		name = lostspawn.311.a
@@ -835,7 +1043,7 @@ fleet_event = {
 			
 			if = {
 				limit = {
-					PREV = { has_country_flag = lostspawn_god_mechanical } 
+					owner = { has_country_flag = lostspawn_god_mechanical } 
 				}
 				spawn_system = {
 					min_distance = 20
@@ -849,7 +1057,7 @@ fleet_event = {
 
 			else_if = {
 				limit = {
-					PREV = { has_country_flag = lostspawn_god_old }
+					owner = { has_country_flag = lostspawn_god_old }
 				}
 				spawn_system = {
 					min_distance = 20
