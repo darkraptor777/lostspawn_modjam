@@ -1,7 +1,7 @@
 #Lost Spawn Initial System Site
 lostspawn_home_system_site = {
 	desc = lostspawn_home_system_site_intro
-	picture = GFX_evt_cold_barren_planet
+	picture = GFX_evt_star_chart
 	stages = 2
 	max_instances = 1
 	allow = {
@@ -11,9 +11,6 @@ lostspawn_home_system_site = {
 	visible = {
 		default_site_visible_trigger = yes
 	}
-	on_visible = {
-		country_event = { id = story.5 days = 30 }
-	}	
 	
 	weight = {
 		base = 0
@@ -95,9 +92,6 @@ lostspawn_failed_shaping_site = {
 	visible = {
 		default_site_visible_trigger = yes
 	}
-	on_visible = {
-		country_event = { id = story.5 days = 30 }
-	}	
 	
 	weight = {
 		base = 0

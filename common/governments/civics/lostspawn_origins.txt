@@ -20,7 +20,7 @@ origin_lostspawn = {
 	#flags = { custom_start_screen }
 
 	random_weight = {
-		base = 5
+		base = 1
 	}
 }
 

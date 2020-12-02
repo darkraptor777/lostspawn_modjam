@@ -734,6 +734,14 @@ fleet_event = {
 	id = lostspawn.101
 	title = "lostspawn.101.name"
 	desc = "lostspawn.101.desc"
+	
+	desc = {
+		trigger = {
+			owner = { has_country_flag = lostspawn_god_old }
+			text = lostspawn.101.desc.old
+		}
+	}
+	
 	picture = GFX_evt_landing_ship
 	show_sound = event_ghost_town
 	
@@ -758,6 +766,12 @@ fleet_event = {
 	id = lostspawn.102
 	title = "lostspawn.102.name"
 	desc = "lostspawn.102.desc"
+	desc = {
+		trigger = {
+			owner = { has_country_flag = lostspawn_god_old }
+			text = lostspawn.102.desc.old
+		}
+	}
 	picture = GFX_evt_landing_ship
 	show_sound = event_ghost_town
 	
@@ -793,6 +807,7 @@ fleet_event = {
 					NOT = { exists = archaeological_site }
 				}
 				save_event_target_as = lostspawn_clue2
+				create_archaeological_site = lostspawn_extinct_civ_site
 			}
 		}
 	}
@@ -813,6 +828,7 @@ fleet_event = {
 				event_chain = lostspawn_chain
 				location = event_target:lostspawn_clue2
 			}
+			remove_point_of_interest = lostspawn_begining
 		}
 	}
 }
@@ -822,7 +838,18 @@ fleet_event = {
 fleet_event = {
 	id = lostspawn.111
 	title = "lostspawn.111.name"
-	desc = "lostspawn.111.desc"
+	desc = {
+		trigger = {
+			owner = { has_country_flag = lostspawn_god_mechanical }
+			text = "lostspawn.111.desc"
+		}
+	}
+	desc = {
+		trigger = {
+			owner = { has_country_flag = lostspawn_god_old }
+			text = lostspawn.111.desc.old
+		}
+	}
 	picture = GFX_evt_landing_ship
 	show_sound = event_ghost_town
 	
@@ -846,7 +873,18 @@ fleet_event = {
 fleet_event = {
 	id = lostspawn.112
 	title = "lostspawn.112.name"
-	desc = "lostspawn.112.desc"
+	desc = {
+		trigger = {
+			owner = { has_country_flag = lostspawn_god_mechanical }
+			text = "lostspawn.112.desc"
+		}
+	}
+	desc = {
+		trigger = {
+			owner = { has_country_flag = lostspawn_god_old }
+			text = lostspawn.112.desc.old
+		}
+	}
 	picture = GFX_evt_landing_ship
 	show_sound = event_ghost_town
 	
@@ -872,7 +910,18 @@ fleet_event = {
 fleet_event = {
 	id = lostspawn.113
 	title = "lostspawn.113.name"
-	desc = "lostspawn.113.desc"
+	desc = {
+		trigger = {
+			owner = { has_country_flag = lostspawn_god_mechanical }
+			text = "lostspawn.113.desc"
+		}
+	}
+	desc = {
+		trigger = {
+			owner = { has_country_flag = lostspawn_god_old }
+			text = lostspawn.113.desc.old
+		}
+	}
 	picture = GFX_evt_landing_ship
 	show_sound = event_ghost_town
 	
@@ -908,6 +957,7 @@ fleet_event = {
 					NOT = { exists = archaeological_site }
 				}
 				save_event_target_as = lostspawn_clue3
+				create_archaeological_site = lostspawn_failed_shaping_site
 			}
 		}
 	}
@@ -932,6 +982,7 @@ fleet_event = {
 				event_chain = lostspawn_chain
 				location = event_target:lostspawn_clue3
 			}
+			remove_point_of_interest = lostspawn_extinct_civ
 		}
 		
 		
@@ -943,7 +994,18 @@ fleet_event = {
 fleet_event = {
 	id = lostspawn.121
 	title = "lostspawn.121.name"
-	desc = "lostspawn.121.desc"
+	desc = {
+		trigger = {
+			owner = { has_country_flag = lostspawn_god_mechanical }
+			text = "lostspawn.121.desc"
+		}
+	}
+	desc = {
+		trigger = {
+			owner = { has_country_flag = lostspawn_god_old }
+			text = lostspawn.121.desc.old
+		}
+	}
 	picture = GFX_evt_landing_ship
 	show_sound = event_ghost_town
 	
@@ -967,7 +1029,18 @@ fleet_event = {
 fleet_event = {
 	id = lostspawn.122
 	title = "lostspawn.122.name"
-	desc = "lostspawn.122.desc"
+	desc = {
+		trigger = {
+			owner = { has_country_flag = lostspawn_god_mechanical }
+			text = "lostspawn.122.desc"
+		}
+	}
+	desc = {
+		trigger = {
+			owner = { has_country_flag = lostspawn_god_old }
+			text = lostspawn.122.desc.old
+		}
+	}
 	picture = GFX_evt_landing_ship
 	show_sound = event_ghost_town
 	
@@ -993,7 +1066,18 @@ fleet_event = {
 fleet_event = {
 	id = lostspawn.123
 	title = "lostspawn.123.name"
-	desc = "lostspawn.123.desc"
+	desc = {
+		trigger = {
+			owner = { has_country_flag = lostspawn_god_mechanical }
+			text = "lostspawn.123.desc"
+		}
+	}
+	desc = {
+		trigger = {
+			owner = { has_country_flag = lostspawn_god_old }
+			text = lostspawn.123.desc.old
+		}
+	}
 	picture = GFX_evt_landing_ship
 	show_sound = event_ghost_town
 	
@@ -1019,7 +1103,18 @@ fleet_event = {
 fleet_event = {
 	id = lostspawn.124
 	title = "lostspawn.124.name"
-	desc = "lostspawn.124.desc"
+	desc = {
+		trigger = {
+			owner = { has_country_flag = lostspawn_god_mechanical }
+			text = "lostspawn.124.desc"
+		}
+	}
+	desc = {
+		trigger = {
+			owner = { has_country_flag = lostspawn_god_old }
+			text = lostspawn.124.desc.old
+		}
+	}
 	picture = GFX_evt_landing_ship
 	show_sound = event_ghost_town
 	
@@ -1092,6 +1187,7 @@ fleet_event = {
 				event_chain = lostspawn_chain
 				location = event_target:lostspawn_godsystem
 			}
+			remove_point_of_interest = lostspawn_failed_shaping
 		}
 		
 		
