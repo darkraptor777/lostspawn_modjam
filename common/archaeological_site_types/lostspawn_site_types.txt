@@ -38,7 +38,7 @@ lostspawn_home_system_site = {
 #Lost Spawn Extinct Civ Site
 lostspawn_extinct_civ_site = {
 	desc = lostspawn_extinct_civ_site_intro
-	picture = GFX_evt_toxic_planet
+	picture = GFX_evt_toxic
 	stages = 3
 	max_instances = 1
 	allow = {
@@ -82,7 +82,7 @@ lostspawn_extinct_civ_site = {
 #Lost Spawn Failed Shaping Site
 lostspawn_failed_shaping_site = {
 	desc = lostspawn_failed_shaping_site_intro
-	picture = GFX_evt_molten_planet
+	picture = GFX_evt_molten
 	stages = 4
 	max_instances = 1
 	allow = {

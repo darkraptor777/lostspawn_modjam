@@ -7,15 +7,20 @@ spriteTypes = {
 	}
 	
 	spriteType = {
-		name = "GFX_event_lostspawn_mechanica"
+		name = "GFX_evt_lostspawn_mechanica"
 		texturefile = "gfx/event_pictures/lostspawn_Mechanica.dds"
 		alwaystransparent = yes
 	}
 	
 	spriteType = {
-		name = "GFX_event_lostspawn_veteris"
+		name = "GFX_evt_lostspawn_veteris"
 		texturefile = "gfx/event_pictures/lostspawn_Veteris.dds"
 		alwaystransparent = yes
 	}
 	
+	spriteType = {
+		name = "GFX_evt_lostspawn_molten_digsite"
+		texturefile = "gfx/event_pictures/lostspawn_molten_digsite.dds"
+		alwaystransparent = yes
+	}
 }

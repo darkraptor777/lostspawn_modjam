@@ -334,6 +334,7 @@ country_event = {
 				set_friendly = yes
 			}
 		}
+		end_event_chain = "lostspawn_chain"
 		hidden_effect = {
 			country_event = { id = lostspawn.301 }
 		}
@@ -350,6 +351,7 @@ country_event = {
 				set_friendly = no
 			}
 		}
+		end_event_chain = "lostspawn_chain"
 		set_country_flag = hostile_to_mechanical_god
 		event_target:mechanical_god_fleet = {
 			set_fleet_stance = aggressive
@@ -357,25 +359,25 @@ country_event = {
 	}
 }
 
-country_event = { #mech god becomes hostile
-	id = lostspawn.1003
-	hide_window = yes
-	is_triggered_only = yes
-	
-	immediate = {
-		
-	}
-}
+#country_event = { #mech god becomes hostile
+#	id = lostspawn.1003
+#	hide_window = yes
+#	is_triggered_only = yes
+#	
+#	immediate = {
+#		
+#	}
+#}
 
-country_event = { #mech god becomes friendly
-	id = lostspawn.1004
-	hide_window = yes
-	is_triggered_only = yes
-	
-	immediate = {
-		
-	}
-}
+#country_event = { #mech god becomes friendly
+#	id = lostspawn.1004
+#	hide_window = yes
+#	is_triggered_only = yes
+#	
+#	immediate = {
+#		
+#	}
+#}
 ###Old God Diplomacy##################################################################################################
 ship_event = {
 	id = lostspawn.1010
@@ -467,6 +469,7 @@ country_event = {
 				set_friendly = yes
 			}
 		}
+		end_event_chain = "lostspawn_chain"
 		hidden_effect = {
 			country_event = { id = lostspawn.311 }
 		}
@@ -485,6 +488,7 @@ country_event = {
 		event_target:old_god_fleet = {
 			set_fleet_stance = aggressive
 		}
+		end_event_chain = "lostspawn_chain"
 	}
 }
 
@@ -499,8 +503,8 @@ country_event = {
 	title = "lostspawn.201.name"
 	desc = lostspawn.201.desc
 		
-	picture = GFX_evt_scavenger_bot
-	show_sound = event_space_whale
+	picture = GFX_evt_lostspawn_mechanica
+	show_sound = event_activating_unknown_technology
 
 	is_triggered_only = yes
 
@@ -531,8 +535,6 @@ country_event = {
 			min = 1000
 			max = 3000
   		}
-		remove_point_of_interest = lostspawn_god
-		end_event_chain = "lostspawn_chain"
 	}
 }
 
@@ -542,8 +544,8 @@ country_event = {
 	title = "lostspawn.202.name"
 	desc = lostspawn.202.desc
 		
-	picture = GFX_evt_voidspawn
-	show_sound = event_space_whale
+	picture = GFX_evt_lostspawn_mechanica
+	show_sound = event_radio_chatter
 
 	is_triggered_only = yes
 	
@@ -556,6 +558,7 @@ country_event = {
 	
 	option = {
 		name = lostspawn.202.a
+		
 	}
 }
 
@@ -565,7 +568,7 @@ country_event = {
 	title = "lostspawn.211.name"
 	desc = lostspawn.211.desc
 		
-	picture = GFX_evt_voidspawn
+	picture = GFX_evt_lostspawn_veteris
 	show_sound = event_space_whale
 
 	is_triggered_only = yes
@@ -603,8 +606,6 @@ country_event = {
 			min = 1000
 			max = 5000
   		}
-		remove_point_of_interest = lostspawn_god
-		end_event_chain = "lostspawn_chain"
 	}
 }
 
@@ -614,8 +615,8 @@ country_event = {
 	title = "lostspawn.212.name"
 	desc = lostspawn.212.desc
 		
-	picture = GFX_evt_voidspawn
-	show_sound = event_space_whale
+	picture = GFX_evt_lostspawn_veteris
+	show_sound = event_radio_chatter
 
 	is_triggered_only = yes
 	
@@ -642,8 +643,8 @@ country_event = {
 	title = "lostspawn.213.name"
 	desc = lostspawn.213.desc
 		
-	picture = GFX_evt_voidspawn
-	show_sound = event_space_whale
+	picture = GFX_evt_lostspawn_veteris
+	show_sound = event_radio_chatter
 
 	is_triggered_only = yes
 	
@@ -672,8 +673,8 @@ country_event = {
 	title = "lostspawn.301.name"
 	desc = lostspawn.301.desc
 		
-	picture = GFX_evt_wraith
-	show_sound = event_space_whale
+	picture = GFX_evt_lostspawn_mechanica
+	show_sound = event_activating_unknown_technology
 
 	is_triggered_only = yes
 
@@ -697,8 +698,7 @@ country_event = {
 		}
 		
 		give_technology = { tech = lostspawn_tech_tech_priest }
-		remove_point_of_interest = lostspawn_god
-		end_event_chain = "lostspawn_chain"
+		
 	}
 }
 
@@ -708,7 +708,7 @@ country_event = {
 	title = "lostspawn.311.name"
 	desc = lostspawn.311.desc
 		
-	picture = GFX_evt_wraith
+	picture = GFX_evt_lostspawn_veteris
 	show_sound = event_space_whale
 
 	is_triggered_only = yes
@@ -723,27 +723,32 @@ country_event = {
 		}
 		set_country_flag = old_god_protector_country
 		save_global_event_target_as = lostspawn_protector_of_old_god
-		remove_point_of_interest = lostspawn_god
-		end_event_chain = "lostspawn_chain"
+		
 	}
 }
 
 ###Lost Spawn Home System Digsite#####################################################################################
-# Stage 1 - Beyond Impact
+# Stage 1 
 fleet_event = {
 	id = lostspawn.101
 	title = "lostspawn.101.name"
-	desc = "lostspawn.101.desc"
-	
+	desc = {
+		trigger = {
+			owner = { has_country_flag = lostspawn_god_mechanical }
+			
+		}
+		text = lostspawn.101.desc
+	}	
 	desc = {
 		trigger = {
 			owner = { has_country_flag = lostspawn_god_old }
-			text = lostspawn.101.desc.old
+			
 		}
+		text = lostspawn.101.desc.old
 	}
 	
-	picture = GFX_evt_landing_ship
-	show_sound = event_ghost_town
+	picture = GFX_evt_ancient_records
+	show_sound = event_whispering
 	
 	archaeology = yes
 	is_triggered_only = yes
@@ -757,23 +762,30 @@ fleet_event = {
 	}
 	
 	option = {
-		name = DIG
+		name = lostspawn_SEARCH
 		small_artifact_reward = yes
 	}
 }
-# Stage 2 - Beyond Impact
+# Stage 2
 fleet_event = {
 	id = lostspawn.102
 	title = "lostspawn.102.name"
-	desc = "lostspawn.102.desc"
+	desc = {
+		trigger = {
+			owner = { has_country_flag = lostspawn_god_mechanical }
+			
+		}
+		text = lostspawn.102.desc
+	}
 	desc = {
 		trigger = {
 			owner = { has_country_flag = lostspawn_god_old }
-			text = lostspawn.102.desc.old
+			
 		}
+		text = lostspawn.102.desc.old
 	}
-	picture = GFX_evt_landing_ship
-	show_sound = event_ghost_town
+	picture = GFX_evt_atmospheric_entry
+	show_sound = event_energy_field
 	
 	archaeology = yes
 	is_triggered_only = yes
@@ -828,30 +840,33 @@ fleet_event = {
 				event_chain = lostspawn_chain
 				location = event_target:lostspawn_clue2
 			}
-			remove_point_of_interest = lostspawn_begining
+			#hidden_effect = {
+			#	remove_point_of_interest = lostspawn_begining
+			#}
 		}
 	}
 }
 
 ###Lost Spawn Extinct Civ Digsite#####################################################################################
-# Stage 1 - Beyond Impact
+# Stage 1 
 fleet_event = {
 	id = lostspawn.111
 	title = "lostspawn.111.name"
 	desc = {
 		trigger = {
 			owner = { has_country_flag = lostspawn_god_mechanical }
-			text = "lostspawn.111.desc"
+			
 		}
+		text = "lostspawn.111.desc"
 	}
 	desc = {
 		trigger = {
 			owner = { has_country_flag = lostspawn_god_old }
-			text = lostspawn.111.desc.old
 		}
+		text = lostspawn.111.desc.old
 	}
-	picture = GFX_evt_landing_ship
-	show_sound = event_ghost_town
+	picture = GFX_evt_alien_ruins
+	show_sound = event_bad_omen
 	
 	archaeology = yes
 	is_triggered_only = yes
@@ -865,28 +880,30 @@ fleet_event = {
 	}
 	
 	option = {
-		name = DIG
+		name = lostspawn_SEARCH
 		small_artifact_reward = yes
 	}
 }
-# Stage 2 - Beyond Impact
+# Stage 2 
 fleet_event = {
 	id = lostspawn.112
 	title = "lostspawn.112.name"
 	desc = {
 		trigger = {
 			owner = { has_country_flag = lostspawn_god_mechanical }
-			text = "lostspawn.112.desc"
+			
 		}
+		text = "lostspawn.112.desc"
 	}
 	desc = {
 		trigger = {
 			owner = { has_country_flag = lostspawn_god_old }
-			text = lostspawn.112.desc.old
+			
 		}
+		text = lostspawn.112.desc.old
 	}
-	picture = GFX_evt_landing_ship
-	show_sound = event_ghost_town
+	picture = GFX_evt_physics_research
+	show_sound = event_power_down
 	
 	archaeology = yes
 	is_triggered_only = yes
@@ -900,7 +917,7 @@ fleet_event = {
 	}
 	
 	option = {
-		name = DIG
+		name = lostspawn_SEARCH
 		
 		small_artifact_reward = yes
 	}
@@ -913,17 +930,19 @@ fleet_event = {
 	desc = {
 		trigger = {
 			owner = { has_country_flag = lostspawn_god_mechanical }
-			text = "lostspawn.113.desc"
+			
 		}
+		text = "lostspawn.113.desc"
 	}
 	desc = {
 		trigger = {
 			owner = { has_country_flag = lostspawn_god_old }
-			text = lostspawn.113.desc.old
+			
 		}
+		text = lostspawn.113.desc.old
 	}
-	picture = GFX_evt_landing_ship
-	show_sound = event_ghost_town
+	picture = GFX_evt_excavation_team
+	show_sound = event_bad_omen
 	
 	archaeology = yes
 	is_triggered_only = yes
@@ -982,7 +1001,9 @@ fleet_event = {
 				event_chain = lostspawn_chain
 				location = event_target:lostspawn_clue3
 			}
-			remove_point_of_interest = lostspawn_extinct_civ
+			#hidden_effect = {
+			#	remove_point_of_interest = lostspawn_extinct_civ
+			#}
 		}
 		
 		
@@ -997,17 +1018,19 @@ fleet_event = {
 	desc = {
 		trigger = {
 			owner = { has_country_flag = lostspawn_god_mechanical }
-			text = "lostspawn.121.desc"
+			
 		}
+		text = "lostspawn.121.desc"
 	}
 	desc = {
 		trigger = {
 			owner = { has_country_flag = lostspawn_god_old }
-			text = lostspawn.121.desc.old
+			
 		}
+		text = lostspawn.121.desc.old
 	}
-	picture = GFX_evt_landing_ship
-	show_sound = event_ghost_town
+	picture = GFX_evt_lostspawn_molten_digsite
+	show_sound = event_machinery
 	
 	archaeology = yes
 	is_triggered_only = yes
@@ -1032,17 +1055,19 @@ fleet_event = {
 	desc = {
 		trigger = {
 			owner = { has_country_flag = lostspawn_god_mechanical }
-			text = "lostspawn.122.desc"
+			
 		}
+		text = "lostspawn.122.desc"
 	}
 	desc = {
 		trigger = {
 			owner = { has_country_flag = lostspawn_god_old }
-			text = lostspawn.122.desc.old
+			
 		}
+		text = lostspawn.122.desc.old
 	}
-	picture = GFX_evt_landing_ship
-	show_sound = event_ghost_town
+	picture = GFX_evt_physics_research
+	show_sound = event_bad_omen
 	
 	archaeology = yes
 	is_triggered_only = yes
@@ -1056,7 +1081,7 @@ fleet_event = {
 	}
 	
 	option = {
-		name = DIG
+		name = lostspawn_SEARCH
 		
 		small_artifact_reward = yes
 	}
@@ -1069,17 +1094,19 @@ fleet_event = {
 	desc = {
 		trigger = {
 			owner = { has_country_flag = lostspawn_god_mechanical }
-			text = "lostspawn.123.desc"
+			
 		}
+		text = "lostspawn.123.desc"
 	}
 	desc = {
 		trigger = {
 			owner = { has_country_flag = lostspawn_god_old }
-			text = lostspawn.123.desc.old
+			
 		}
+		text = lostspawn.123.desc.old
 	}
-	picture = GFX_evt_landing_ship
-	show_sound = event_ghost_town
+	picture = GFX_evt_molten
+	show_sound = event_dig_site
 	
 	archaeology = yes
 	is_triggered_only = yes
@@ -1093,7 +1120,7 @@ fleet_event = {
 	}
 	
 	option = {
-		name = DIG
+		name = lostspawn_SEARCH
 		
 		small_artifact_reward = yes
 	}
@@ -1106,17 +1133,19 @@ fleet_event = {
 	desc = {
 		trigger = {
 			owner = { has_country_flag = lostspawn_god_mechanical }
-			text = "lostspawn.124.desc"
+			
 		}
+		text = "lostspawn.124.desc"
 	}
 	desc = {
 		trigger = {
 			owner = { has_country_flag = lostspawn_god_old }
-			text = lostspawn.124.desc.old
+			
 		}
+		text = lostspawn.124.desc.old
 	}
-	picture = GFX_evt_landing_ship
-	show_sound = event_ghost_town
+	picture = GFX_evt_glitchy_matrix
+	show_sound = event_bad_omen
 	
 	archaeology = yes
 	is_triggered_only = yes
@@ -1145,7 +1174,7 @@ fleet_event = {
 					max_distance = 40
 					max_jumps = 1
 					initializer = "lost_spawn_lev_system_1"
-					save_event_target_as = lostspawn_godsystem
+					#save_event_target_as = lostspawn_leviathansystem
 				}
 			}
 			
@@ -1159,16 +1188,33 @@ fleet_event = {
 					max_distance = 40
 					max_jumps = 1
 					initializer = "lost_spawn_lev_system_2"
-					save_event_target_as = lostspawn_godsystem
+					#save_event_target_as = lostspawn_leviathansystem
 				}
 			}
 				
 				
 		}
+		
+		closest_system = {
+			limit = {
+				OR = {
+					has_star_flag = lostspawn_guardian
+				}
+			}
+			min_steps = 1
+			max_steps = 10
+			random_system_planet = {
+				limit = {
+					is_star = yes
+				}
+				save_event_target_as = lostspawn_leviathansystem
+			}
+		}
 	}
 
 	after = { 
 		from = { set_site_progress_locked = no } 
+		
 	}
 	
 	option = {
@@ -1176,18 +1222,23 @@ fleet_event = {
 		
 		medium_artifact_reward = yes
 		
+	
 		owner = {
+			create_point_of_interest = {
+				id = lostspawn_leviathan
+				name = "lostspawn_leviathan_poi"
+				desc = lostspawn_leviathan_desc
+				event_chain = lostspawn_chain
+				location = event_target:lostspawn_leviathansystem
+			}
+
 			add_resource = {
 				unity = 1000
 			}
-			create_point_of_interest = {
-				id = lostspawn_god
-				name = "lostspawn_god_poi"
-				desc = lostspawn_god_desc
-				event_chain = lostspawn_chain
-				location = event_target:lostspawn_godsystem
-			}
-			remove_point_of_interest = lostspawn_failed_shaping
+			
+			#hidden_effect = {
+			#	remove_point_of_interest = lostspawn_failed_shaping
+			#}
 		}
 		
 		
