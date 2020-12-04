@@ -591,21 +591,13 @@ country_event = {
 	}
 	option = {
 		name = lostspawn.211.a
-		if = {
-			limit = {
-				has_country_flag = lostspawn_god_old
-			}
-			add_modifier = {
-				modifier = "lostspawn_old_deicide"
-				days = -1
-			}
-		}
 		add_monthly_resource_mult = {
  			resource = unity
 			value = 72
 			min = 1000
 			max = 5000
   		}
+		add_relic = r_lostspawn_old_scales
 	}
 }
 
@@ -810,7 +802,7 @@ fleet_event = {
 					NOT = { exists = archaeological_site }
 				}
 			}
-			min_steps = 1
+			min_steps = 2
 			max_steps = 10
 			random_system_planet = {
 				limit = {
@@ -967,7 +959,7 @@ fleet_event = {
 					NOT = { exists = archaeological_site }
 				}
 			}
-			min_steps = 1
+			min_steps = 2
 			max_steps = 10
 			random_system_planet = {
 				limit = {

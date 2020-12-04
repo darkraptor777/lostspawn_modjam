@@ -67,7 +67,7 @@ lostspawn_extinct_civ_site = {
 		event = lostspawn.112
 	}
 	stage = {
-		difficulty = 4
+		difficulty = 5
 		icon = GFX_archaeology_runes_B3
 		event = lostspawn.113
 	}
@@ -103,7 +103,7 @@ lostspawn_failed_shaping_site = {
 		event = lostspawn.121
 	}
 	stage = {
-		difficulty = 4
+		difficulty = 5
 		icon = GFX_archaeology_runes_E2
 		event = lostspawn.122
 	}
@@ -113,7 +113,7 @@ lostspawn_failed_shaping_site = {
 		event = lostspawn.123
 	}
 	stage = {
-		difficulty = 5
+		difficulty = 6
 		icon = GFX_archaeology_runes_E4
 		event = lostspawn.124
 	}
