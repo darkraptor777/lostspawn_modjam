@@ -5,6 +5,10 @@ origin_lostspawn = {
 	
 	max_once_global = yes
 
+	playable = {
+		host_has_dlc = "Distant Stars Story Pack"
+	}
+	
 	possible = {
 		ethics = {
 			OR = {
